@@ -4,7 +4,20 @@
 
 def isWinner(x, nums):
     """
-    Determines the winner 
+    Determines the winner of a set of prime number removal games.
+
+    Args:
+        x (int): The number of rounds.
+        nums (list of int): A list of integers where each integer n denotes
+        a set of consecutive integers starting from 1 up to and including n.
+
+    Returns:
+        str: The name of the player who won the most rounds (either "Ben"
+        or "Maria").
+        None: If the winner cannot be determined.
+
+    Raises:
+        None.
     """
     # Check for invalid input
     if x <= 0 or nums is None:
@@ -40,10 +53,25 @@ def isWinner(x, nums):
 
 def rm_multiples(ls, x):
     """
-    remove
+    Removes multiples of a prime number from an array of possible prime
+    numbers.
+
+    Args:
+        ls (list of int): An array of possible prime numbers.
+        x (int): The prime number to remove multiples of.
+
+    Returns:
+        None.
+
+    Raises:
+        None.
     """
     # This loop iterates over multiples of a prime number and marks them as
     # non-prime by setting their corresponding value to 0 in the input
+    # list ls. Starting from 2, it sets every multiple of x up to the
+    # length of ls to 0. If the index i * x is out of range for the list ls,
+    # the try block will raise an IndexError exception, and the loop will
+    # terminate using the break statement.
     for i in range(2, len(ls)):
         try:
             ls[i * x] = 0
